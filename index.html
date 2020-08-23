@@ -106,7 +106,7 @@
     margin-top:20px;
 }
 #wish{
-    visibility:hidden;
+    display:none;
     color:red;
 }
 
@@ -115,7 +115,7 @@
     text-align:center;
     position:relative;
     content:" ";
-    animation:wis 70s ease-in-out 40s 1;
+    animation:wis 70s ease-in-out 10s 1;
 }
 
 @keyframes wis{
@@ -287,8 +287,8 @@
 let wish=document.getElementById('wish');
 
 setTimeout(()=>{
-    wish.style.visibility="visible";
-},20000);
+    wish.style.display="inline";
+},2000);
 
  }
   
