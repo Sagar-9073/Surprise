@@ -216,7 +216,7 @@
             <img src="bd1.jpg" alt="Happy Birthday" />
         </div>
         
-        <button id='btn' onclick="aud();">Click</button>
+        <button id='btn' onclick="aud();"></button>
         
        <audio id="audio">
            
@@ -232,9 +232,11 @@
    
   if(confir==true){
 
+ document.getElementById('btn').innerHTML="Click Here";
+ 
     function aud(){
  
-    alert("Please Enter Your First Name");
+ /*alert("Please Enter Your First Name"); */
   
   
   
@@ -247,7 +249,9 @@
    let prompt=window.prompt("Please Enter Your First Name");
  
    let bname=document.getElementById("bname");
- 
+
+   
+        
  setTimeout(()=>{
   document.getElementById("bname").innerHTML=`<p id="inner">Happy Birthday to You</p> `+prompt;
  },5000);
@@ -291,7 +295,8 @@ setTimeout(()=>{
 
  }
             }else{
-    alert("Ok ! No problem");
+    alert("Ok ! No problem.Please leave the site then.");
+    document.getElementById('btn').style.visibility="hidden";
   }
        </script>
     </body>
