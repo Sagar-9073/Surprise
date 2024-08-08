@@ -1,300 +1,320 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width , initial-scale=1"/>
-        <title>Surprise | Birthday Gift</title>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Surprise | Birthday Gift</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+
     <style>
-    
-   *{
-       margin:0;
-       padding:0;
-       box-sizing: border-box;
-       font-family: 'Poppins', sans-serif;
-   }
-   
-   body{
-       background:#000;
-       overflow:hidden;
-       color:#fff;
-   }
-   
-   #bulb{
-       width:100%;
-       height:20vh;
-       display:flex;
-       align-items:flex-start;
-       justify-content: space-around;
-       background:#000;
-       visibility:hidden;
-   }
-   
-   #bulb img{
-       width:20%;
-       transform:rotate(180deg);
-   }
-   
-   #banner{
-       margin:10px auto;
-       width:90%;
-       height:20vh;
-       visibility:hidden;
-   }
-   
-   #banner img{
-       width:100%;
-       height:100%;
-       
-   }
-  #name{
-      width:80%;
-      margin:auto;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-  } 
-  
-  #name #bname{
-      color:#FF00FF;
-      font-weight:bold;
-      font-size:20px;
-      text-align:center;
-      font-style:italic;
-      text-transform:uppercase;
-      position:relative;
-  }
- 
-   
-   #cake{
-       width:100%;
-       margin:auto;
-       visibility:hidden;
-   }
-   
-   #cake img{
-       width:100%;
-      
-   }
-    
-      
-  #btn{
-     
-      background:blue;
-      color:white;
-      border:none;
-      outline:none;
-      font-weight:bold;
-      margin-left:35%;
-      padding:10px 30px;
-      visibility:visible;
-      text-align:center;
-  }  
-  
-  #audio{
-     display:none; 
-  }
-  
-  
-#message{
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    margin-top:20px;
-}
-#wish{
-    display:none;
-    color:red;
-}
-
-#wish::after{
-    color:cyan;
-    text-align:center;
-    position:relative;
-    content:" ";
-    animation:msg 70s ease-in-out 10s 1;
-}
-
-@keyframes msg{
-    0%{
-        content:"Today is...";
-        
-    }
-    10%{
-        content:"as beautiful as other days";
-        color:yellow;
-    }
-    20%{
-       content:"But you realize";
-       color:cyan;
-    }
-    30%{
-        content:"Another year has gone";
-        color:cyan;
-    }
-    40%{
-       content:"in a blink of the eyes"; 
-       color:yellow;
-    }
-    50%{
-        content:"However ,";
-        color:cyan;
-    }
-    60%{
-       content:"Lets make this celebration"; 
-       color:cyan;
-    }
-    70%{
-        content:"as a BIG Celebration Ever";
-        color:cyan;
-    }
-    80%{
-       content:"May all your wishes comes true"; 
-       color:cyan;
-    }
-    90%{
-       content:"May you live long"; 
-       color:cyan;
-        
-    }
-    100%{
-       content:"Happy Birthday to You"; 
-       transform:scale(1.5);
-       font-weight:bold;
-       color:yellow;
-    }
-}
-
-
-#inner{
-    color:#fff;
-    animation:innerP 4s ease 0s 1;
-    position:relative;
-}
-
-@keyframes innerP{
-    0%{
-     transform:scale(0.2);   
-    }
-    
-    100%{
-     transform:scale(1);
-    }
-}
-    </style>
-    
-    </head>
-    <body>
-        
-        <div id="bulb">
-            <img src="bulb_1.gif" alt="n"/>
-            <img src="bulb_1.gif" alt="n"/>
-            <img src="bulb_1.gif" alt="n"/>
-            <img src="bulb_1.gif" alt="n"/>
-        </div>
-        
-        <div id="banner">
-          <img src="banner.png" alt="Happy Birthday" />  
-        </div>
-        
-        <div id="name">
-            <span id="bname"></span>
-        </div>
-        
-
-      <div id="message">
-         
-          <span id="wish"></span>
-          
-      </div>
-        
-        
-        <div id="cake">
-            <img src="bd1.jpg" alt="Happy Birthday" />
-        </div>
-        
-        <button id='btn' onclick="aud();"></button>
-        
-       <audio id="audio">
-           
-        <source src="music.mp3" type="audio/mpeg" /> 
-           
-       </audio>
- 
-        <script>
-    
-   let confir=confirm("Hii, It's a message from Sagar. Do you want to read it?");
- 
-  if(confir==true){
-
- document.getElementById('btn').innerHTML="Click Here";
- 
-    function aud(){
- 
- /*alert("Please Enter Your First Name"); */
-  
-   let btn = document.getElementById('btn');
-   let audio = document.getElementById('audio');
-   
-   let banner=document.getElementById("banner");
-   let bulb=document.getElementById("bulb");
-  
-   let prompt=window.prompt("Please Enter Your First Name");
-       prompt=prompt.trim();
-   let bname=document.getElementById("bname");
-
-if(prompt!=null){           
- setTimeout(()=>{
-  document.getElementById("bname").innerHTML=`<p id="inner">Happy Birthday to You ${prompt}</p>`;
- },5000);
-  
-  
-  //banner 
-   setTimeout (()=>{
-       banner.style.visibility="visible";
-       banner.style.transition="all 1s ease"
-   },1000);
-   
-    
-    //bulb
-     setTimeout (()=>{
-       bulb.style.visibility="visible";
-       bulb.style.transition="all 1s ease"
-   },1000);
-   
-   //button
-   setTimeout (()=>{
-   btn.style.visibility="hidden";
-   },500 ) ;
-    
-  //audio
-    setTimeout (()=>{
-     audio.play();
-    },500);
-
-   let cake=document.getElementById("cake");
-   setTimeout(()=>{
-       cake.style.visibility="visible";
-   },500)
-       
-//wishing
-
-let wish=document.getElementById('wish');
-
-setTimeout(()=>{
-    wish.style.display="inline";
-},2000);
-
- }else{
-alert("You have not entered your name. Please refresh this page and enter your first name only");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
-            }else{
-    alert("Ok ! No problem.Please leave the site then.");
-    document.getElementById('btn').style.visibility="hidden";
-  }
-       </script>
-    </body>
+
+        body {
+            background: #000;
+            color: #fff;
+            position: relative;
+        }
+
+        #bulb {
+            width: 100%;
+            height: 20vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+            background: #000;
+            visibility: hidden;
+        }
+
+        #bulb img {
+            width: 20%;
+            transform: rotate(180deg);
+        }
+
+        #banner {
+            margin: 10px auto;
+            width: 90%;
+            height: 20vh;
+            visibility: hidden;
+        }
+
+        #banner img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #name {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #name #bname {
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        #cake {
+            width: 100%;
+            margin: auto;
+            visibility: hidden;
+        }
+
+        #cake img {
+            width: 100%;
+        }
+
+        #buttons {
+            display: grid;
+            align-items: center;
+            width: 40%;
+            margin-left: 30%;
+        }
+
+        .btn {
+            background: blue;
+            color: white;
+            border: none;
+            outline: none;
+            font-weight: bold;
+            padding: 10px 30px;
+            visibility: visible;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #stopBtn {
+            visibility: hidden;
+        }
+
+        #message {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #wish {
+            display: none;
+            color: red;
+        }
+
+        #wish::after {
+            color: cyan;
+            text-align: center;
+            position: relative;
+            content: " ";
+            animation: msg 70s ease-in-out 8s;
+        }
+
+        @keyframes msg {
+            0% {
+                content: "Wishing you happiness...";
+            }
+            10% {
+                content: "and joy on your special day";
+                color: yellow;
+            }
+            20% {
+                content: "May your day be filled";
+                color: cyan;
+            }
+            30% {
+                content: "with love and laughter";
+                color: cyan;
+            }
+            40% {
+                content: "Enjoy every moment";
+                color: yellow;
+            }
+            50% {
+                content: "and make wonderful memories";
+                color: cyan;
+            }
+            60% {
+                content: "Wishing you all the best";
+                color: cyan;
+            }
+            70% {
+                content: "for the year ahead";
+                color: cyan;
+            }
+            80% {
+                content: "May all your wishes come true";
+                color: cyan;
+            }
+            90% {
+                content: "Celebrate and enjoy!";
+                color: cyan;
+            }
+            100% {
+                content: "Wishing You a very very Happy Birthday";
+                transform: scale(2.5);
+                color: yellow;
+            }
+        }
+
+        .inn {
+            animation: innerP 4s ease 0s 1;
+        }
+
+        @keyframes innerP {
+            0% {
+                transform: scale(0.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #inner {
+            color: #FFFFFF;
+            font-style: italic;
+        }
+
+        #innerPrompt {
+            color: #FF00FF;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="bulb">
+        <img src="bulb_1.gif" alt="n" />
+        <img src="bulb_1.gif" alt="n" />
+        <img src="bulb_1.gif" alt="n" />
+        <img src="bulb_1.gif" alt="n" />
+    </div>
+
+    <div id="banner">
+        <img src="banner.png" alt="Happy Birthday" />
+    </div>
+
+    <div id="name">
+        <span id="bname"></span>
+    </div>
+
+    <div id="message">
+        <span id="wish"></span>
+    </div>
+
+    <div id="cake">
+        <img src="bd1.jpg" alt="Happy Birthday" />
+    </div>
+
+    <div id="buttons">
+        <button id='btn' class="btn" onclick="aud();">Click Here</button>
+        <button id='stopBtn' class="btn" onclick="stopAll();">Stop</button>
+    </div>
+
+    <audio id="audio">
+        <source src="music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+        (function () {
+            "use strict";
+
+            let timers = [];
+            const audio = document.getElementById('audio');
+
+            const confir = confirm("Hii, It's a message from Sagar. Do you want to read it?");
+            if (confir === true) {
+                document.getElementById('btn').innerHTML = "Click Here";
+
+                window.aud = function () {
+                    const btn = document.getElementById('btn');
+                    const banner = document.getElementById("banner");
+                    const bulb = document.getElementById("bulb");
+
+                    let prompt = window.prompt("Please Enter Your First Name");
+
+                    // Validate prompt input
+                    if (!prompt || prompt.trim() === "") {
+                        alert("Please Provide Your First Name");
+                        return;
+                    }
+
+                    prompt = prompt.trim();
+                    const bname = document.getElementById("bname");
+                    const stop = document.getElementById("stopBtn");
+
+                    // Showing the name
+                    timers.push(setTimeout(() => {
+                        bname.innerHTML = `<p id="inner" class="inn">Happy Birthday to You</p><p id="innerPrompt" class="inn">&#127873; ${prompt} &#127873;</p>`;
+                    }, 100));
+
+                    // Showing banner
+                    timers.push(setTimeout(() => {
+                        banner.style.visibility = "visible";
+                        banner.style.transition = "all 1s ease";
+                    }, 100));
+
+                    // Showing bulbs
+                    timers.push(setTimeout(() => {
+                        bulb.style.visibility = "visible";
+                        bulb.style.transition = "all 1s ease";
+                    }, 100));
+
+                    // Hiding the button
+                    timers.push(setTimeout(() => {
+                        btn.style.visibility = "hidden";
+                        stop.style.visibility = "visible";
+                    }, 100));
+
+                    // Playing audio
+                    timers.push(setTimeout(() => {
+                        audio.play();
+                    }, 100));
+
+                    // Showing cake
+                    const cake = document.getElementById("cake");
+                    timers.push(setTimeout(() => {
+                        cake.style.visibility = "visible";
+                    }, 100));
+
+                    // Showing the wish message
+                    const wish = document.getElementById('wish');
+                    timers.push(setTimeout(() => {
+                        wish.style.display = "inline";
+                    }, 200));
+                };
+            } else {
+                alert("Ok! No problem. Please leave the site then.");
+                document.getElementById('btn').style.visibility = "hidden";
+            }
+
+            window.stopAll = function () {
+                // Stop all timeouts
+                for (let i = 0; i < timers.length; i++) {
+                    clearTimeout(timers[i]);
+                }
+
+                // Pause the audio
+                audio.pause();
+                audio.currentTime = 0;
+
+                // Hide all visible elements
+                document.getElementById('btn').style.visibility = "visible";
+                document.getElementById("bname").innerHTML = "";
+                document.getElementById("banner").style.visibility = "hidden";
+                document.getElementById("bulb").style.visibility = "hidden";
+                document.getElementById("cake").style.visibility = "hidden";
+                document.getElementById('wish').style.display = "none";
+                document.getElementById("stopBtn").style.visibility = "hidden";
+            };
+        })();
+    </script>
+  </body>
 </html>
+    
