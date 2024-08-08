@@ -228,8 +228,6 @@
     
    let confir=confirm("Hii, It's a message from Sagar. Do you want to read it?");
  
-    
-   
   if(confir==true){
 
  document.getElementById('btn').innerHTML="Click Here";
@@ -237,8 +235,6 @@
     function aud(){
  
  /*alert("Please Enter Your First Name"); */
-  
-  
   
    let btn = document.getElementById('btn');
    let audio = document.getElementById('audio');
@@ -250,8 +246,7 @@
  
    let bname=document.getElementById("bname");
 
-   
-        
+if(prompt!=null){           
  setTimeout(()=>{
   document.getElementById("bname").innerHTML=`<p id="inner">Happy Birthday to You</p> `+prompt;
  },5000);
@@ -293,7 +288,10 @@ setTimeout(()=>{
     wish.style.display="inline";
 },2000);
 
- }
+ }else{
+            prompt=window.prompt("Please Enter Your First Name");
+            prompt=prompt.trim();
+        }
             }else{
     alert("Ok ! No problem.Please leave the site then.");
     document.getElementById('btn').style.visibility="hidden";
